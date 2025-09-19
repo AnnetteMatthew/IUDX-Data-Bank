@@ -1,0 +1,184 @@
+.sidebar {
+  background: white;
+  border-radius: .5rem;
+  padding: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.filters-header {
+  transition: background-color .3s ease, border .3s ease;
+  border-bottom: .0625rem solid #eaeaea;
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.filters-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.filter-icon {
+  color: #6b7280;
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  color: #00a36f;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.reset-btn:hover {
+  text-decoration: underline;
+}
+
+.filter-groups {
+  padding: 0;
+}
+
+.filter-group {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.filter-toggle {
+  background: none;
+  border: none;
+  padding: .5rem 0;
+  font-weight: 500;
+  text-align: left;
+  color: #1f2937;
+  width: 100%;
+}
+
+.filter-toggle:hover {
+  background: #f9fafb;
+}
+
+.filter-toggle span {
+  flex: 1;
+  font-weight: 500;
+  color: #374151;
+  font-size: .875rem;
+}
+
+.chevron {
+  color: #9ca3af;
+  margin-left: auto;
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+}
+
+.filter-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.filter-options {
+  padding: 0 1.25rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  overflow-x: hidden;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+  font-size: .875rem;
+}
+
+.filter-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.option-label {
+  flex: 1;
+  color: #374151;
+}
+
+.option-count {
+  color: #9ca3af;
+  font-size: .75rem;
+}
+
+::ng-deep .filter-options .p-chip {
+  height: 2.25rem;
+  border-radius: 6.1875rem;
+  border: .0625rem solid #e0e0e0;
+  background-color: #fff;
+  color: #1f2937;
+  padding: 0 .75rem;
+  font-size: .875rem;
+  cursor: pointer;
+  transition: all .2s ease;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  line-height: 2.125rem;
+}
+
+::ng-deep .filter-options .p-chip .p-chip-label,
+::ng-deep .filter-options .p-chip .p-chip-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 0;
+  max-width: 14rem;
+}
+
+@media (max-width: 480px) {
+
+  ::ng-deep .filter-options .p-chip .p-chip-label,
+  ::ng-deep .filter-options .p-chip .p-chip-text {
+    max-width: 10rem;
+  }
+}
+
+::ng-deep .filter-options .p-chip:hover {
+  border-color: #059669;
+  background-color: #f0fdf4;
+}
+
+::ng-deep .filter-options .active {
+  .p-chip {
+    background-color: #c5efd9;
+    color: #059669;
+    border-color: #059669;
+    font-weight: 600;
+  }
+}
+
+::ng-deep .filter-options .p-chip.active:hover {
+  background-color: #a7f3d0;
+}
+
+@media (min-width: 1200px) {
+  .sidebar {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 .25rem .75rem #0000000d;
+    padding: 1rem;
+    left: 1rem;
+    top: 15.9375rem;
+    z-index: 100;
+    margin: -3rem 1rem;
+    color: #1f2937;
+  }
+}

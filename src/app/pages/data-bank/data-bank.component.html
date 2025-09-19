@@ -1,0 +1,101 @@
+<!-- Header Component -->
+<app-header></app-header>
+
+<!-- Breadcrumb Component -->
+
+<div class="d-flex">
+    <div class="col-2 databank--container__img--container d-none d-xl-block">
+        <img src="assets/databank-img.png" alt="databank banner" class="databank--container__banner--image">
+    </div>
+    <div class="databank--container__search--section col-10 d-none d-xl-block">
+        <app-breadcrumb [items]="breadcrumbItems" [description]="breadcrumbDescription">
+        </app-breadcrumb>
+        <app-search-bar (search)="onSearch($event)"></app-search-bar>
+    </div>
+    <div class="databank--container__header--section d-block d-xl-none">
+        <div class="databank--container__header--section-content">
+            <div class="databank--container__title">Data Banks</div>
+            <p class="databank--container__description"> Explore a collection of data banks
+                from multiple sectors designed to support analysis, research, and solution development </p>
+        </div>
+    </div>
+</div>
+<div class="d-block d-xl-none">
+    <hr class="collection--header__divider">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+</div>
+
+<div class="container page-content">
+
+    <!-- Main Layout with Sidebar and Content -->
+    <div class="main-layout">
+        <!-- Sidebar Filters Component -->
+        <div class="d-none d-xl-block">
+            <app-sidebar-filters (filterChange)="onFilterChange($event)" (resetFilters)="onResetFilters()">
+            </app-sidebar-filters>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="d-none d-xl-block">
+                <div class="collection--header d-flex align-items-center justify-content-between p-4">
+                    <header class="collection--header__info d-flex align-items-center">
+                        <img src="assets/dataBank.svg" alt="data bank image" aria-hidden="true"
+                            class="collection--header__icon">
+                        <h2 class="collection--header__title">Data Bank Collection</h2>
+                    </header>
+                    <app-sort (sortChange)="onSort($event)"></app-sort>
+                </div>
+            </div>
+
+            <nav
+                class="d-flex pt-1 collection--header__filter align-items-center justify-content-between d-block d-xl-none">
+                <button class="collection--header__button" (click)="openMobileFilterPanel()">
+                    <img src="assets/list-filter.svg" alt="list_icon" aria-hidden="true" class="me-2"> Add Filter
+                </button>
+                <app-sort (sortChange)="onSort($event)"></app-sort>
+            </nav>
+            <!-- No Data Message -->
+            <div class="no-results" *ngIf="totalRecords === 0">
+                <div class="no-results__content">
+                    <img src="assets/empty-state.svg" alt="No data" class="no-results__icon d-none" />
+                    <h3 class="no-results__title">Oops! We Couldn't Find What You Were Looking For</h3>
+                    <p class="no-results__text">Try using a different keyword, adjusting your filters.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Data Banks Grid using Card Components -->
+            <div class="data-banks-grid" *ngIf="totalRecords > 0">
+                <app-data-bank-card *ngFor="let item of paginatedItems; trackBy: trackByItemId" [item]="item">
+                </app-data-bank-card>
+            </div>
+
+            <!-- Pagination -->
+            <p-paginator *ngIf="totalRecords > 0" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                [totalRecords]="totalRecords" [rowsPerPageOptions]="[6, 12, 18]">
+            </p-paginator>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Filter Panel -->
+<div class="mobile-filter-overlay" [class.active]="isMobileFilterPanelOpen" (click)="closeMobileFilterPanel()"
+    *ngIf="isMobileFilterPanelOpen">
+</div>
+
+<div class="mobile-filter-panel" [class.active]="isMobileFilterPanelOpen">
+    <div class="mobile-filter-content">
+        <app-sidebar-filters (filterChange)="onMobileFilterChange($event)" (resetFilters)="onMobileResetFilters()">
+        </app-sidebar-filters>
+    </div>
+</div>
+
+<!-- Request Data Bank Section -->
+<app-request-data-bank></app-request-data-bank>
+
+<!-- Connect with TGDeX Section -->
+<app-connect-tgdex></app-connect-tgdex>
+
+<!-- Footer Component -->
+<app-footer></app-footer>

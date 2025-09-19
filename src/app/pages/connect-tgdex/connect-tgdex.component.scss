@@ -1,0 +1,228 @@
+.connect-tgdex-section {
+    background-image: url(/assets/sub-footer-image.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    height: auto;
+    min-height: 10rem;
+    padding: 2rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    padding: 0;
+    gap: 2rem;
+}
+
+.text-content {
+    margin-bottom: 1.25rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: .3125rem;
+    text-align: center;
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: #555;
+    text-align: center;
+    width: 100%;
+    padding-inline: .3125rem;
+    margin-bottom: 1rem;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    gap: .9375rem;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-register,
+.btn-contact {
+    display: flex;
+    padding: .75rem 1.25rem;
+    border-radius: 2rem;
+    font-size: .9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all .3s ease;
+    height: 3.125rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-register {
+    width: 10.5625rem;
+    color: #1f3735;
+    background-color: #fff;
+    border: .0625rem solid #1F3735;
+}
+
+.btn-contact {
+    width: auto;
+    background-color: #eab308;
+    color: #fff !important;
+    border: .0625rem solid #EAB308;
+}
+
+
+.phone-icon,
+.arrow-icon {
+    width: 1.5625rem;
+    height: 1.5625rem;
+    margin-left: .5rem;
+}
+
+.btn-register:hover .arrow-icon {
+    transform: translateX(3px);
+}
+
+.btn-contact:hover .phone-icon {
+    transform: scale(1.1);
+}
+
+.d-none {
+    display: none !important;
+}
+
+@media (min-width: 1400px) {
+    .connect-tgdex-section {
+        width: 100%;
+        height: 10rem;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 2.25rem;
+        text-align: left;
+        width: auto;
+        margin-bottom: 0;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    .subtitle {
+        font-size: 1.75rem;
+        text-align: left;
+    }
+
+    .actions {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .btn-register,
+    .btn-contact {
+        padding: .875rem 1.5rem;
+        height: 3.25rem;
+        width: auto;
+    }
+
+    .d-xxl-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .connect-tgdex-section {
+        height: 11.25rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .connect-tgdex-section {
+        height: 12.5rem;
+        overflow-y: hidden;
+    }
+
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .text-content {
+        margin-bottom: 0;
+        text-align: left;
+        align-items: flex-start;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .title {
+        font-size: 1.875rem;
+        text-align: left;
+        width: auto;
+        margin-bottom: .3125rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        text-align: left;
+        width: auto;
+    }
+
+    .actions {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .btn-register,
+    .btn-contact {
+        width: auto;
+        min-width: 8.125rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-content {
+        flex-direction: row;
+        align-items: baseline;
+        gap: .625rem;
+    }
+
+    .d-xl-inline {
+        display: inline !important;
+    }
+}

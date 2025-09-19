@@ -1,0 +1,277 @@
+.data-bank-card {
+  background: #fff;
+  border: .125rem solid #e5e7eb;
+  border-radius: .5rem;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-bank-card_content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.status-badge {
+  padding: .25rem .75rem;
+  border-radius: .25rem;
+  font-size: clamp(.7rem, .8vw, .8125rem);
+  font-weight: 500;
+  font-family: Avenir, sans-serif;
+}
+
+.status-badge.open {
+  background: rgba(0, 192, 128, .05);
+  color: #00c080;
+}
+
+.status-badge.restricted {
+  background: rgb(237, 223, 223);
+  color: #ef4444;
+}
+
+.department {
+  color: #6b7280;
+  font-size: clamp(.7rem, .8vw, .8125rem);
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: .5%;
+  font-family: Avenir, sans-serif;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.card-title {
+  font-size: clamp(1rem, 1vw + .25rem, 1.25rem);
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1.25rem;
+  padding-top: .625rem;
+  font-family: Avenir, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-description {
+  color: #1f2937;
+  font-size: clamp(.8125rem, .9vw, 1rem);
+  line-height: clamp(1.1875rem, 1.3vw, 1.5rem);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 8vh;
+}
+
+.card-tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+::ng-deep .card-tags .p-chip {
+  background: #f9f9f9;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  font-size: .75rem;
+  font-weight: 500;
+  border-radius: 10rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: none;
+}
+
+::ng-deep .card-tags .p-chip .p-chip-text {
+  font-size: .75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+::ng-deep .card-tags .p-chip .p-chip-icon {
+  font-size: .625rem;
+  color: #9ca3af;
+  margin-right: .25rem;
+}
+
+.mt-lg-3 {
+  margin-top: 1rem;
+}
+
+.databank--card__meta {
+  width: 100%;
+}
+
+.databank--card__meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.gap-4 {
+  gap: 1rem !important;
+}
+
+.pt-1 {
+  padding-top: 0.25rem !important;
+}
+
+.databank--card__info {
+  display: flex;
+  align-items: center;
+  font-size: clamp(.7rem, .8vw, .8125rem);
+  font-weight: 600;
+  font-family: Avenir, sans-serif;
+  line-height: 1.25rem;
+  letter-spacing: .5%;
+  gap: .25rem;
+}
+
+.databank--card__readiness {
+  color: #179c63;
+  font-size: clamp(.7rem, .8vw, .8125rem);
+}
+
+.databank--card__button {
+  background: transparent;
+  color: #10b981;
+  border: 1.5px solid #10b981;
+  padding: .625rem 1.25rem;
+  border-radius: 1.5rem;
+  font-size: .7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.databank--card__button:hover {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-md-block {
+  display: none !important;
+}
+
+.pt-1 {
+  padding-top: .25rem !important;
+}
+
+.databank--card__file--type,
+.databank--card__date {
+  font-weight: 500;
+  font-size: clamp(.7rem, .8vw, .8125rem);
+}
+
+@media (min-width: 768px) {
+  .d-md-block {
+    display: block !important;
+  }
+}
+
+.mx-2 {
+  margin-right: .5rem !important;
+  margin-left: .5rem !important;
+}
+
+.mb-2 {
+  margin-bottom: .5rem !important;
+}
+
+.me-2 {
+  margin-right: .5rem !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.databank--card__divider {
+  border: none;
+  border-top: .0625rem solid #000;
+  opacity: 10%;
+  width: 98%;
+}
+
+.card-content {
+  gap: 1.5rem !important;
+  align-items: center !important;
+  display: flex !important;
+}
+
+hr {
+  margin: 0 !important;
+  opacity: 15% !important;
+}
+
+@media (min-width: 90rem) {
+  .databank--card__content {
+    padding: 1.5rem;
+  }
+
+  .databank--card__title {
+    font-size: clamp(1.15rem, 1vw + .25rem, 1.35rem);
+  }
+
+  .databank--card__description {
+    font-size: clamp(.9375rem, 1vw, 1.05rem);
+    line-height: clamp(1.4rem, 1.2vw, 1.75rem);
+  }
+}
+
+@media (min-width: 992px) {
+  .mt-lg-3 {
+    margin-top: 1rem !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .databank--card__title {
+    font-size: clamp(1.1rem, 1vw + .3rem, 1.25rem);
+  }
+
+  .databank--card__description {
+    font-size: clamp(.9rem, .95vw, 1rem);
+  }
+}
+
+@media (min-width: 769px) {
+  .data-bank-card {
+    margin: 1.25rem 0 .3125rem;
+  }
+
+  .data-bank-card_content {
+    padding: 1.5rem;
+  }
+}          

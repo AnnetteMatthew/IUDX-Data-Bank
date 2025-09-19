@@ -1,0 +1,82 @@
+.container {
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.topbar-section {
+  background-color: #d8f7eb;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.page-topbar { 
+  display: flex; 
+  align-items: center; 
+  gap: 2rem; 
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.breadcrumb { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: .5rem; 
+  font-size: 1.5rem; 
+  align-self: center; 
+}
+
+.breadcrumb-link { 
+  display: inline-flex; 
+  align-items: center; 
+  color: #5f6b7a;
+  text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+  color: #122230;
+}
+
+.breadcrumb-link svg { 
+  width: 20px; 
+  height: 20px; 
+}
+
+.breadcrumb-separator { 
+  color: #5f6b7a; 
+  font-size: 1.5rem; 
+}
+
+.breadcrumb-current { 
+  font-weight: 600; 
+  font-size: 1.5rem; 
+  color: #122230;
+}
+
+.page-header { 
+  margin: 0; 
+  flex: 1;
+  align-self: center;
+}
+
+.page-description { 
+  margin: 0; 
+  color: #5f6b7a; 
+  font-size: 0.8rem; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  .page-description { 
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+
+@media (min-width: 900px) {
+  .breadcrumb { font-size: 1.5rem; }
+  .breadcrumb-link svg { width: 22px; height: 22px; }
+  .breadcrumb-separator, .breadcrumb-current { font-size: 1.5rem; }
+}

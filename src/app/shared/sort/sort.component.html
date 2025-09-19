@@ -1,0 +1,19 @@
+<nav class="collection--header__sort">
+    <div class="sort-dropdown-container" #dropdownContainer>
+        <button class="collection--header__button" (click)="toggleSort()" type="button">
+            Sort: {{ selectedSort }}
+            <img src="assets/sort.png" alt="filter" aria-hidden="true">
+        </button>
+
+        <!-- Dropdown Content -->
+        <div class="sort-dropdown" [class.active]="isDropdownOpen" *ngIf="isDropdownOpen">
+            <div class="dropdown-content">
+                <p-listbox [(ngModel)]="selectedOption" [options]="options" [multiple]="false" [checkbox]="true"
+                    optionLabel="name" class="w-full md:w-56" (onChange)="onCategoryChange()" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div class="dropdown-backdrop" *ngIf="isDropdownOpen" (click)="closeDropdown()"></div>
+</nav>

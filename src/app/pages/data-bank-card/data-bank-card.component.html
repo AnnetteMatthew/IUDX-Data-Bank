@@ -1,0 +1,44 @@
+<div class="data-bank-card">
+    <article class="data-bank-card_content">
+        <div class="card-header">
+            <span class="status-badge" [ngClass]="item.status">{{ item.status | uppercase }}</span>
+            <span class="department">{{ item.department }}</span>
+        </div>
+
+        <h3 class="card-title">{{ item.title }}</h3>
+
+        <p class="card-description">{{ item.description }}</p>
+
+        <div class="card-tags me-2 p-2" *ngIf="item.tags && item.tags.length > 0">
+            <p-chip *ngFor="let tag of item.tags" [label]="tag"
+                class="mx-2 mb-2"></p-chip>
+        </div>
+        <hr class="databank--card__divider">
+
+        <div class="databank--card__bottom--section mt-lg-3">
+            <div class="databank--card__meta">
+                <div class="databank--card__meta-row d-flex">
+                    <div>
+                        <div class="card-content">
+                            <span class="databank--card__info" *ngIf="item.dataReadiness">
+                                Data Readiness:
+                                <span class="databank--card__readiness">{{ item.dataReadiness }}%</span>
+                            </span>
+                            <span class="databank--card__info">
+                                File Type:
+                                <span class="databank--card__file--type">{{ item.format }}</span>
+                            </span>
+                        </div>
+                        <span class="databank--card__info pt-1">
+                            Last updated:
+                            <span class="databank--card__date">{{ item.updatedDate }}</span>
+                        </span>
+                    </div>
+                    <button class="databank--card__button d-none d-md-block">
+                        View Data Bank
+                    </button>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

@@ -1,0 +1,32 @@
+<aside class="sidebar">
+    <div class="filters-header d-flex justify-content-between align-items-centre">
+        <div class="filters-title d-flex align-items-centre gap-2">
+            <img src="assets/list-filter.svg" alt="icon">
+            FILTERS APPLIED
+        </div>
+        <button class="reset-btn" (click)="onResetFilters()">Reset</button>
+    </div>
+
+    <div class="filter-groups">
+        <div class="filter-group" *ngFor="let group of filterGroups">
+            <button class="filter-toggle w-100 d-flex justify-content-between align-items-centre"
+                [attr.aria-expanded]="group.isExpanded" (click)="toggleGroup(group.id)">
+                <div class="d-flex align-items-center gap-2">
+                    <img [src]="group.iconUrl" [alt]="group.title + ' icon'">
+                    <span>{{ group.title }}</span>
+                </div>
+                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" />
+                </svg>
+            </button>
+
+            <div class="filter-options" *ngIf="group.isExpanded">
+                <p-chip *ngFor="let option of group.options" [label]="option.label"
+                    [ngClass]="{'active': option.isSelected}" class="filter-chip mx-2 mb-2"
+                    (click)="onFilterToggle(group.id, option.id)">
+                </p-chip>
+            </div>
+        </div>
+    </div>
+</aside>

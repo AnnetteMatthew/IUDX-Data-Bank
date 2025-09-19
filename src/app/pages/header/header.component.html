@@ -1,0 +1,68 @@
+<header class="site-header">
+    <nav class="container header-inner">
+        <a class="brand" routerLink="/" aria-label="T-GDEX Data Bank home">
+            <img class="brand-mark" src="assets/gov_logo.png" alt="Telangana emblem" width="48" height="48" />
+            <img src="assets/header_logo.svg" alt="Header Logo" width="140" height="48" />
+        </a>
+        <div class="nav">
+            <button class="search-icon d-none d-xxl-block">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div class="nav-divider d-none d-xxl-block"></div>
+            <a href="#" class="nav-link">ABOUT TGDeX</a>
+            <a href="#" class="nav-link is-active">DATA BANKS</a>
+            <a href="#" class="nav-link">AI MODELS</a>
+            <a href="#" class="nav-link">USE CASES</a>
+            <a href="#" class="nav-link">SANDBOX IDE</a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_531_4805)">
+                        <path
+                            d="M8 1.33398C8.73333 1.33398 9.33333 1.93398 9.33333 2.66732C9.33333 3.40065 8.73333 4.00065 8 4.00065C7.26667 4.00065 6.66667 3.40065 6.66667 2.66732C6.66667 1.93398 7.26667 1.33398 8 1.33398ZM14 6.00065H10V14.6673H8.66667V10.6673H7.33333V14.6673H6V6.00065H2V4.66732H14V6.00065Z"
+                            fill="#1F2937" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_531_4805">
+                            <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                ACCESSIBILITY OPTIONS</a>
+            <div class="nav-divider"></div>
+            <div class="header-actions d-xl-block d-none">
+                <button class="btn outline" type="button" aria-label="Login">SIGN IN</button>
+                <button class="btn accent" type="button" aria-label="Login">REGISTER</button>
+            </div>
+        </div>
+
+        <div class="user-menu-container">
+            <button class="accessibility user-menu">
+                <img src="assets/accessibility.svg" alt="Accessibility" class="accessibility-icon">
+            </button>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-controls="primary-menu"
+                [attr.aria-expanded]="isMenuOpen" (click)="toggleMenu()">
+                <span>Menu ⋮</span>
+            </button>
+            <button aria-label="User Menu" class="user-menu">
+                <img src="assets/user-circle.svg" alt="User Menu" class="user-circle" />
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
+    <div id="primary-menu" class="mobile-menu-panel" [class.active]="isMenuOpen">
+        <div class="mobile-menu-content">
+            <a href="#" class="nav-link">ABOUT TGDeX</a>
+            <a href="#" class="nav-link is-active">DATA BANKS</a>
+            <a href="#" class="nav-link">AI MODELS</a>
+            <a href="#" class="nav-link">USE CASES</a>
+            <a href="#" class="nav-link">SANDBOX IDE</a>
+        </div>
+    </div>
+</header>
